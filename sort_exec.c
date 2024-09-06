@@ -21,7 +21,7 @@ int main() {
     double times[6];
     FILE *log_file;
     
-    srand(time(NULL)); // Inicializa o gerador de números aleatórios
+    srand(time(NULL)); // Inicidaliza o gerador de números aleatórios
 
     printf("Digite o inicio do vetor: ");
     scanf("%d", &inc);
