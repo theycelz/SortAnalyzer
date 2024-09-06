@@ -9,16 +9,16 @@ void bubble_sort_algorithm(int *array, int lenght);
 void insertion_sort_algorithm(int *array, int lenght);
 
 // Merge Sort
-void merge_halves(int *array, int start, int midpoint, int end); // Remover o parâmetro tempValue
+void merge_halves(int *array, int start, int midpoint, int end); // Remover o parâmetro temp
 
-void recursive_mergesort(int *array, int start, int end); // Remover o parâmetro tempValue
+void recursive_mergesort(int *array, int start, int end); // Remover o parâmetro temp
 
 void merge_sort_algorithm(int *array, int lenght);
 
 // Heap Sort
-int left_child(int parentIndex);
+int left_child(int pai);
 
-int right_child(int parentIndex);
+int right_child(int pai);
 
 void fix_heap(int *array, int lenght, int i);
 

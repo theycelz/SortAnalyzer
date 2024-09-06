@@ -139,7 +139,8 @@ void heap_sort_algorithm(int *array, int lenght){
     }
 }
 
-/*Quick Sort*/
+/*Algoritmo Quick Sort*/
+
 int partition(int *array, int start, int end) {
     int pivotValue = array[start];
     int i = start, j = end;
@@ -171,7 +172,7 @@ void quick_sort_algorithm(int *array, int lenght){
     quick_sort_recursive(array, 0, lenght-1);
 }
 
-/*Counting Sort*/
+/*Algoritmo Counting Sort*/
 void counting_sort_algorithm(int *array, int lenght) {
     int highestValue = 0;
     for (int i = 0; i < lenght; i++) {
@@ -188,10 +189,10 @@ void counting_sort_algorithm(int *array, int lenght) {
     for (int i = 0; i < lenght; i++)
         countArray[array[i]]++;
 
-    int index = 0;
+    int arrayIndex = 0;
     for (int i = 0; i <= highestValue; i++) {
         while (countArray[i] > 0) {
-            array[index++] = i;
+            array[arrayIndex++] = i;
             countArray[i]--;
         }
     }
@@ -200,41 +201,34 @@ void counting_sort_algorithm(int *array, int lenght) {
 }
 
 
-/*Retorna média*/
+/*Função de cálculo de média*/
 double get_average(double *array, int lenght){
-    double media = 0.0;
+    double avg = 0.0;
     for(int i = 0; i<lenght; i++){
-        media = media + array[i];
+        avg = avg + array[i];
     }
-    return media/lenght;
+    return avg/lenght;
 }
 
-/*Inverte vetor*/
-void flip_array(int *array, int lenght){
-    if(lenght>0){
-        int *aux = calloc(lenght, sizeof(int));
-        int iteration_count = 0;
+/*Função para embralhar vetor*/
 
-        for(int i = 0; i<lenght; i++){
-            aux[i] = array[i];
-        }
-
-        for(int j = lenght-1; j >= 0; j--){
-            array[iteration_count++] = aux[j];
-        }
-    }
-}
-
-/*Embaralha vetor*/
-void randomize_array(int *array, int lenght){
+void randomize_array(int *array, int length) {
     srand(time(NULL));
-    int index1, index2;
-    int qtde = lenght * 0.1;
-    for(int i = 0; i<qtde; i++){
-        index1 = rand() % lenght;
-        index2 = rand() % lenght;
-        int tempValue = array[index1];
-        array[index1] = array[index2];
-        array[index2] = tempValue;
+    for (int i = length - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
+
+/*função para inverter vetor*/
+
+void flip_array(int *array, int length) {
+    for (int i = 0, j = length - 1; i < j; i++, j--) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
