@@ -20,7 +20,7 @@ Este projeto implementa e compara o desempenho de vários algoritmos de ordenaç
 ## Estrutura do Projeto
 - `helpers.h`: Arquivo de cabeçalho contendo declarações de funções e definições de tipos.
 - `helpers.c`: Implementação dos algoritmos de ordenação e funções auxiliares.
-- `main.c`: Programa principal que executa as comparações de ordenação e exibe os resultados.
+- `sort_exec.c`: Programa principal que executa as comparações de ordenação e exibe os resultados.
 
 ## Detalhes da Implementação
 
@@ -56,11 +56,11 @@ Este projeto implementa e compara o desempenho de vários algoritmos de ordenaç
 ## Como Usar
 1. Compile o projeto:
    ```
-   gcc -o sort_compare main.c helpers.c -lm
+   gcc sort_exec.c helpers.c -o main
    ```
 2. Execute o executável:
    ```
-   ./sort_compare
+   ./main
    ```
 3. Siga as instruções para inserir:
    - Tamanho inicial do array
